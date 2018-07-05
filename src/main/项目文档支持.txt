@@ -1,0 +1,24 @@
+1.注意事项：
+     实体类注意事项：
+        1.所有的实体类必须实现Serviable接口
+        2.实体类中每个类的注解必须加上：@Document(collection = "mongo")
+        3.所有带有时间的时间必须采用格林尼治时间(北京时间+8)
+            @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone="GMT+8")
+        4.实体类中必须带有getter/setter方法，必须存在构造方法(有参，没有参)
+    接口类注意事项：
+        1.所有接口方法必须带有响应的接口文档注释，接口发生修改时，注释也要发生变化
+        2.接口中不许带有访问修饰符，不许声明变量（常量）
+        3.Mapper接口中的最好别使用注解
+        4.Service接口中的注解推荐使用@Resource
+          所有的Serivce接口类上，必须带有@Service("XXX")注解
+          所有的Serivce接口类上，必须带有@Transaction事务注解
+          注意所有接口方法的事务隔离级别   查询方法和增删改必须使用不同的事务隔离级别
+        5.所有控制器中的注解必须使用Spring Boot框架标准注解如：@RestController ,@PostMapping,@GetMapping,...
+        6.控制器中的所有资源注解必须推荐使用@Resources
+
+
+
+
+
+Swagger2:接口API访问地址：
+    http://localhost:8080/swagger-ui.html

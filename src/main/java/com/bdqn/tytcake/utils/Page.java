@@ -5,5 +5,5 @@ public class Page {
     private Integer pageSize;
     private Integer pageCount;
     private Integer rowCount;
-
+    private Integer fromTo;
 }
